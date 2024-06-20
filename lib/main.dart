@@ -1,7 +1,31 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const WidgetDetail());
+}
+
+class WidgetDetail extends StatelessWidget {
+  const WidgetDetail({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text("Widget Detail"),
+            centerTitle: true,
+            backgroundColor: Colors.deepOrange,
+            leading: const Text("Menüs"),
+          ),
+          body: const Center(
+              child: Text("awd")
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: ()  {},
+            child: const Text("lo"),
+          ),
+        ));
+  }
 }
 
 class MyApp extends StatelessWidget {
