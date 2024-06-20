@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const WidgetDetail());
+  runApp(const Test());
 }
 
 class WidgetDetail extends StatelessWidget {
@@ -11,20 +11,55 @@ class WidgetDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-          appBar: AppBar(
-            title: const Text("Widget Detail"),
-            centerTitle: true,
-            backgroundColor: Colors.deepOrange,
-            leading: const Text("Menüs"),
+      appBar: AppBar(
+        title: const Text("Widget Detail"),
+        centerTitle: true,
+        backgroundColor: Colors.deepOrange,
+        leading: const Text("Menüs"),
+      ),
+      body: const Center(child: Text("awd")),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Text("lo"),
+      ),
+    ));
+  }
+}
+
+class Test extends StatefulWidget {
+  const Test({super.key});
+
+  @override
+  State<Test> createState() => _TestState();
+}
+
+class _TestState extends State<Test> {
+  bool _isPressed = false;
+  int _count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(_count.toString()),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    _isPressed = !_isPressed;
+                    _count++;
+                  });
+                },
+                child: Text(_isPressed ? 'Clicked!' : 'Tıkla'),
+              ),
+            ],
           ),
-          body: const Center(
-              child: Text("awd")
-          ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: ()  {},
-            child: const Text("lo"),
-          ),
-        ));
+        ),
+      ),
+    );
   }
 }
 
