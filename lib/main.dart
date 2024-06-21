@@ -29,26 +29,30 @@ class _WidgetDetailState extends State<WidgetDetail> {
             leading: const Text("Menüs"),
           ),
           body: Center(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(count.toString(),
-                  style: TextStyle(
-                    color: ColorToHex(Colors.teal),
-                    fontSize: 40,
-                  )),
-              Text("Nice Location",
-                  style: TextStyle(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,  // Center the content vertically
+              children: [
+                Text(count.toString(),
+                    style: TextStyle(
+                      color: ColorToHex(Colors.teal),
                       fontSize: 40,
-                      fontFamily: "Agdasima",
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 10,
-                      color: HexColor(warningColor))),
-              Text("Heloow",
-                  style: GoogleFonts.acme(
-                      color: HexColor(dangerColor), fontSize: 23))
-            ],
-          )),
+                    )),
+                Text("Nice Location",
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontFamily: "Agdasima",
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 10,
+                        color: HexColor(warningColor))),
+                Text("Heloow",
+                    style: GoogleFonts.acme(
+                        color: HexColor(dangerColor), fontSize: 23)),
+                // Image.network("https://scontent.fsaw2-1.fna.fbcdn.net/v/t39.30808-6/448489813_18439291771034655_4705147699117486275_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Swy9gSj5L3QQ7kNvgHWUjgM&_nc_ht=scontent.fsaw2-1.fna&oh=00_AYDc2FGPmITYgzqGrlUUqREQihLbu9XX62OTWvGlk7AySQ&oe=667B50DB"),
+                Image.asset("lib/assets/images/1.jpg")
+              ],
+            ),
+          ),
+
           floatingActionButton: FloatingActionButton(
             onPressed: () {
               setState(() {
