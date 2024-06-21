@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfirst/constants/colors.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 void main() {
-  runApp(const Test());
+  runApp(const WidgetDetail());
 }
 
-class WidgetDetail extends StatelessWidget {
+class WidgetDetail extends StatefulWidget {
   const WidgetDetail({super.key});
 
+  @override
+  State<WidgetDetail> createState() => _WidgetDetailState();
+}
+
+class _WidgetDetailState extends State<WidgetDetail> {
+  int count=0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,9 +25,27 @@ class WidgetDetail extends StatelessWidget {
         backgroundColor: Colors.deepOrange,
         leading: const Text("Menüs"),
       ),
-      body: const Center(child: Text("awd")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(count.toString(),
+        style: TextStyle(
+            color: ColorToHex(Colors.teal),
+          fontSize: 40,)),
+            Text("Nice Location", style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 10,
+              color: HexColor(warningColor)
+            ))
+          ],)),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            count++;
+          });
+        },
         child: const Text("lo"),
       ),
     ));
