@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfirst/constants/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 void main() {
@@ -14,41 +15,50 @@ class WidgetDetail extends StatefulWidget {
 }
 
 class _WidgetDetailState extends State<WidgetDetail> {
-  int count=0;
+  int count = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: ThemeData(fontFamily: "Agdasima"),
         home: Scaffold(
-      appBar: AppBar(
-        title: const Text("Widget Detail"),
-        centerTitle: true,
-        backgroundColor: Colors.deepOrange,
-        leading: const Text("Menüs"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(count.toString(),
-        style: TextStyle(
-            color: ColorToHex(Colors.teal),
-          fontSize: 40,)),
-            Text("Nice Location", style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 10,
-              color: HexColor(warningColor)
-            ))
-          ],)),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            count++;
-          });
-        },
-        child: const Text("lo"),
-      ),
-    ));
+          appBar: AppBar(
+            title: const Text("Widget Detail"),
+            centerTitle: true,
+            backgroundColor: Colors.deepOrange,
+            leading: const Text("Menüs"),
+          ),
+          body: Center(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(count.toString(),
+                  style: TextStyle(
+                    color: ColorToHex(Colors.teal),
+                    fontSize: 40,
+                  )),
+              Text("Nice Location",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontFamily: "Agdasima",
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 10,
+                      color: HexColor(warningColor))),
+              Text("Heloow",
+                  style: GoogleFonts.acme(
+                      color: HexColor(dangerColor), fontSize: 23))
+            ],
+          )),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                count++;
+              });
+            },
+            hoverColor: HexColor(dangerColor),
+            child: const Icon(Icons.ad_units),
+          ),
+        ));
   }
 }
 
